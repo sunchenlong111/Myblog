@@ -9,7 +9,6 @@ const URL = {
 
 
 export default{
-
   register({username,password}){
     return request(URL.REGISTER,'POST',{username,password})
   },
