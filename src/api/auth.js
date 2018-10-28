@@ -16,9 +16,9 @@ export default{
     return request(URL.LOGIN,'POST',{username,password})
   },
   logout(){
-    return request(URL.LOGOUT)
+    return request(URL.LOGOUT)//注销
   },
   getInfo(){
-    return request(URL.GET_INFO)
+    return request(URL.GET_INFO)//判断用户是否登陆
   }
 }
