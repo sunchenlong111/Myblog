@@ -2,10 +2,10 @@
   <div id="login">
     <div class="container">
       <h4>用户名</h4>
-    <el-input></el-input>
+    <input placeholder="用户名" v-model="username">
     <h4>密码</h4>
-    <el-input type="password"></el-input>
-    <el-button>立即注册</el-button>
+    <input  type="password" placeholder="密码" v-model="password" @keyup.enter="onRegister">
+    <el-button @click="onRegister">立即注册</el-button>
     <p>已有账号？<router-link to="./login">立即登录</router-link></p>
     </div>
   </div>
