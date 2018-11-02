@@ -98,7 +98,6 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requireAuth)) {
-    console.log(store.getters.isLogin)
     store.dispatch('checkLogin').then(isLogin => {
       //调用beforeEach，一开始我们默认的是false，当登陆刷新的时候，这里是异步请求查询是
       //否登录，结果是登陆的状态，但是一开始是默认的false，它还没等响应回过来，就已经判断

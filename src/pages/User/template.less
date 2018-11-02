@@ -27,7 +27,7 @@
   .section2{
     .item{
       display: flex;
-      align-items: flex-start;
+      align-content: flex-start;
       margin:30px 0;
       .data{
         display: flex;
@@ -45,9 +45,17 @@
         }
       }
 
-      h3{font-size: 18px;font-weight: normal;}
-      p{font-size: 14px;margin:10px 0;}
+      .text{
+        padding-top:6px;
+          h3{font-size: 18px;font-weight: normal;}
+           p{font-size: 14px;margin:10px 0;}
+      }
     }
+  }
+
+  .pagination{
+    align-self: center;
+    margin-bottom:20px;
   }
 
 }

@@ -39,12 +39,14 @@ export default {
   },
   methods:{
     onCreate(){
-      if(this.titleLength<=30&&this.descriptionLength<=200&&this.contentLength<=10000){
+      if(parseInt(this.titleLength)<=30&&parseInt(this.descriptionLength)<=200&&parseInt(this.contentLength)<=10000){
          blog.createBlog({title:this.title,content:this.content,description:this.description,atIndex:this.atIndex})
           .then(res =>{
             this.$message.success(res.msg)
             this.$router.push({path:`/detail/${res.data.id}`})
           })
+      }else{
+        console.log(1)
       }
     },
     judgeLength(x,y,z){
