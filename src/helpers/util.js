@@ -10,7 +10,7 @@ function friendlyDate(dateStr){
       str='刚刚'
       break
     case space <1000*3600:
-      str = Math.floor(sapce/60000) + '分钟前'
+      str = Math.floor(space/60000) + '分钟前'
       break
     case space < 1000*3600*24:
       str = Math.floor(space/(1000*3600)) + '小时前'

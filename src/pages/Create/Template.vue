@@ -8,7 +8,7 @@
     <el-input type="textarea" 
       :autosize="{ minRows: 2, maxRows: 4}"
       v-model='description'
-   >
+    >
     </el-input>
     <p :class=" descriptionClass" >{{tellmeDescriptionLength}}</p>
      <h3>文章内容</h3>

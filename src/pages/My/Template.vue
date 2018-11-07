@@ -1,6 +1,5 @@
 <template>
   <div id="my">
-  
       <section class="section1">
         <img :src="user.avatar" :alt="user.username" class="avatar">
         <h3>{{user.username}}</h3>
@@ -18,7 +17,7 @@
           </div> 
         </router-link>
         <div class="actions">
-          <router-link :to="`/edit${blog.id}`">编辑</router-link>
+          <router-link :to="`/edit/${blog.id}`">编辑</router-link>
           <a href="#" @click.prevent="onDelete(blog.id)">删除</a>
         </div>
       </section>
@@ -31,8 +30,7 @@
           @current-change="onPageChange"
           >
         </el-pagination>
-      </section>
-      
+      </section>     
   </div>
 </template>
 

@@ -35,10 +35,10 @@ export default {
       this.judgeLength(parseInt(this.contentLength), 30,'contentClass')
       return this.contentLength
     }
-      
   },
   methods:{
     onCreate(){
+      console.log(this.atIndex)
       if(parseInt(this.titleLength)<=30&&parseInt(this.descriptionLength)<=200&&parseInt(this.contentLength)<=10000){
          blog.createBlog({title:this.title,content:this.content,description:this.description,atIndex:this.atIndex})
           .then(res =>{

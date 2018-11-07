@@ -1,5 +1,7 @@
 import blog from "@/api/blog";
-import { mapGetters } from 'vuex';
+import {
+  mapGetters
+} from 'vuex';
 
 export default {
   data() {
@@ -9,12 +11,19 @@ export default {
       total: 0
     }
   },
-  computed:{
-    ...mapGetters(['user']),
-   
+  
+  computed: {
+    user:{
+      get:function(){
+        return this.$store.getters.user
+      },
+      set:function(){
+      }
+    }
   },
+
   created() {
-    this.page = this.$route.query.page || 1
+    this.page = parseInt(this.$route.query.page) || 1
     blog.getBlogsByUserId(this.user.id, {
         page: this.page
       })
@@ -37,8 +46,17 @@ export default {
         year: dateObj.getFullYear()
       }
     },
-    onDelete(blogId){
-      console.log(blogId)
+    async onDelete(blogId) {
+      await this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      })
+      await blog.deleteBlog({
+        blogId
+      })
+      this.$message.success('删除成功')
+      this.blogs = this.blogs.filter(blog => blog.id != blogId)
     },
     onPageChange(newPage) {
       blog.getBlogsByUserId(this.user.id, {
