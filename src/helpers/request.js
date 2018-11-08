@@ -3,7 +3,7 @@ import { Message } from 'element-ui'
 
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-axios.defaults.baseURL = " http://blog-server.hunger-valley.com"
+axios.defaults.baseURL = " https://blog-server.hunger-valley.com"
 axios.defaults.withCredentials = true 
 //通过设置withCredentials 为true获得的第三方cookies，将会依旧享受同源策略
 
